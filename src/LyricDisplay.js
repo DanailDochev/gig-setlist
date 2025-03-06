@@ -19,10 +19,43 @@ const LyricDisplay = ({ songLyrics }) => {
     }
   };
 
+  // Process lyrics to add styling to section headers
+  const processLyrics = () => {
+    if (!songLyrics) return null;
+    
+    // Split lyrics into lines
+    const lines = songLyrics.split('\n');
+    
+    return lines.map((line, index) => {
+      // Check if line contains a section header (куплет or припев)
+      if (line.toLowerCase().includes('куплет') || line.toLowerCase().includes('припев')
+          || line.toLowerCase().includes('бридж')) {
+        return (
+          <div 
+            key={index} 
+            style={{
+              fontStyle: 'italic',
+              fontSize: '15px',
+              textDecoration: 'underline',
+              textAlign: 'center',
+              margin: '0.5rem 0',
+              color: '#ff6b9d',
+              fontWeight: 'bold'
+            }}
+          >
+            {line}
+          </div>
+        );
+      } else {
+        return <div key={index}>{line}</div>;
+      }
+    });
+  };
+
   return (
-    <pre style={lyricStyles.container}>
-      {songLyrics}
-    </pre>
+    <div style={lyricStyles.container}>
+      {processLyrics()}
+    </div>
   );
 };
 
