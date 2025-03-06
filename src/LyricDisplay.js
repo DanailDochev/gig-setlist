@@ -5,7 +5,7 @@ const LyricDisplay = ({ songLyrics }) => {
     container: {
       backgroundColor: '#1A1A1D',
       color: '#A64D79',
-      padding: '1.5rem',
+      padding: '0.25 rem',
       borderRadius: '10px',
       lineHeight: '1.6',
       fontFamily: "'Courier New', monospace",
