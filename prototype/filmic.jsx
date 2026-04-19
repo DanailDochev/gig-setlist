@@ -509,7 +509,7 @@ function SurpriseRow({ item, theme, onOpen, unlocked }) {
           fontStyle: "italic",
         }}
       >
-        {unlocked ? "тайните песни са долу ↓" : "натисни за да отключиш"}
+        {unlocked ? "↓ караоке ↓" : "натисни за да отключиш"}
       </div>
       <div
         style={{
@@ -1752,7 +1752,7 @@ function SecretDivider({ theme }) {
             color: theme.fg,
           }}
         >
-          Пет тайни песни
+          КАРАОКЕ
         </div>
       </div>
     </div>

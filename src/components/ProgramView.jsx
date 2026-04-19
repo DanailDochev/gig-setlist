@@ -57,7 +57,7 @@ function SecretDivider({ theme }) {
             color: theme.fg,
           }}
         >
-          Пет тайни песни
+          КАРАОКЕ
         </div>
       </div>
     </div>
