@@ -1698,11 +1698,10 @@ const RIDDLE_TEXT  = "Забавление, при което ентусиаст
 const RIDDLE_ALPHA = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ".split("");
 
 function RiddleView({ theme, onBack, onSolved }) {
-  const { useState: useS } = React;
-  const [guessed, setGuessed] = useS(new Set());
-  const [flash,   setFlash]   = useS(null);
-  const [wiggle,  setWiggle]  = useS(null);
-  const [solved,  setSolved]  = useS(false);
+  const [guessed, setGuessed] = useState(() => new Set());
+  const [flash,   setFlash]   = useState(null);
+  const [wiggle,  setWiggle]  = useState(null);
+  const [solved,  setSolved]  = useState(false);
 
   const guess = (letter) => {
     if (guessed.has(letter) || solved) return;
@@ -1986,13 +1985,13 @@ function PasswordView({ theme, onBack, onUnlock }) {
     if (status !== "idle") return;
     setValue((v) => {
       if (v.length >= PIN_LEN) return v;
-      const next = v + d;
-      if (next.length === PIN_LEN) {
-        setTimeout(() => submit(next), 120);
-      }
-      return next;
+      return v + d;
     });
   };
+
+  useEffect(() => {
+    if (value.length === PIN_LEN) submit(value);
+  }, [value, submit]);
   const backspace = () => {
     if (status !== "idle") return;
     setValue((v) => v.slice(0, -1));
