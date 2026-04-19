@@ -91,7 +91,7 @@ function SurpriseRow({ item, theme, onOpen, unlocked }) {
           textTransform: "uppercase",
         }}
       >
-        {unlocked ? "финал · отворен" : "заключен финал"}
+        {unlocked ? "финал · отворен" : "финал: заключен."}
       </div>
       <div
         style={{
@@ -116,7 +116,7 @@ function SurpriseRow({ item, theme, onOpen, unlocked }) {
           fontStyle: "italic",
         }}
       >
-        {unlocked ? "тайните песни са долу ↓" : "докосни за да влезеш"}
+        {unlocked ? "тайните песни са долу ↓" : "натисни за да отключиш"}
       </div>
       <div
         style={{
