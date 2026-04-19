@@ -179,8 +179,8 @@ function Cover({ theme, onEnter, photo }) {
           textTransform: "uppercase",
         }}
       >
-        <span>Акустично — 01</span>
-        <span>MMXXVI</span>
+        <span>Акустично1</span>
+        <span>Акустично</span>
       </div>
 
       {/* typographic block — upper area */}
@@ -206,7 +206,7 @@ function Cover({ theme, onEnter, photo }) {
             fontWeight: 700,
           }}
         >
-          Дани Дочев — на живо
+          Дани Дочев - на живо
         </div>
         <div
           style={{
@@ -217,9 +217,9 @@ function Cover({ theme, onEnter, photo }) {
             letterSpacing: "-0.035em",
           }}
         >
-          Една
+          Мементо
           <br />
-          <i style={{ color: theme.accent, fontWeight: 300 }}>нощ</i>
+          <i style={{ color: theme.accent, fontWeight: 300 }}>21.04.26</i>
         </div>
         <div
           style={{

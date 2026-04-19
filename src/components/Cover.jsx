@@ -103,7 +103,7 @@ export function Cover({ theme, coverPhoto, onEnter }) {
         }}
       >
         <span>Акустично</span>
-        <span>MMXXVI</span>
+        <span>Акустично</span>
       </div>
 
       {/* typographic block */}
@@ -168,9 +168,11 @@ export function Cover({ theme, coverPhoto, onEnter }) {
             fontStyle: "italic",
           }}
         >
-          Следвай програмата.
+          1.Неиздавани песни.
           <br />
-          Пей с нас. Краят е изненада.
+          2.Main set list.
+          <br />
+          3.Изненада :)
         </div>
       </div>
 
