@@ -1,121 +1,141 @@
-import logo from './logo.svg';
+import { useState, useMemo } from 'react';
 import './App.css';
-import React, { useState } from 'react';
-import { lyrics } from './Lyrics';
-import LyricDisplay from './LyricDisplay';
+import { PROGRAM, SECRET_SONGS, SECRET_PIN, LYRICS, SECRET_LYRICS } from './data/songs';
+import { Cover } from './components/Cover';
+import { ProgramView } from './components/ProgramView';
+import { LyricView } from './components/LyricView';
+import { PasswordView } from './components/PasswordView';
+import { SealView } from './components/SealView';
 
-const songs = [
-  { id: 1, title: "Двупосочен Билет 🎫", lyrics: lyrics[1] },
-  { id: 2, title: "Още малко само 🕰️", lyrics: lyrics[2]},
-  { id: 3, title: "Парфюм 💐", lyrics: lyrics[3] },
-  { id: 4, title: "Бриз 🌬️", lyrics: lyrics[4] },
-  { id: 5, title: "Все едно 🤷", lyrics: lyrics[5] },
-  { id: 6, title: "Тайна 🤫", lyrics: lyrics[6] },
-  { id: 7, title: "Край 🔚", lyrics: lyrics[7] },
-  { id: 8, title: "Подпис ✍️", lyrics: lyrics[8] },
-  { id: 9, title: "Дим 💨", lyrics: lyrics[9] },
-  { id: 10, title: "Някъде Там 🌌", lyrics: lyrics[10] },
-  { id: 11, title: "Вино 🍷", lyrics: lyrics[11] }
-];
+const PUBLIC_URL = process.env.PUBLIC_URL || '';
 
-function App() {
-  const [selectedSong, setSelectedSong] = useState(null);
+const photos = {
+  cover: `${PUBLIC_URL}/assets/photo-04.jpg`,
+  song:  `${PUBLIC_URL}/assets/photo-03.jpg`,
+};
+
+const THEMES = {
+  editorial: {
+    dark:  { bg: '#0d0c0a', fg: '#eae3d2', muted: '#7a7365', hair: 'rgba(234,227,210,0.12)', alt: 'rgba(255,255,255,0.015)', accent: '#b89968' },
+    light: { bg: '#f1ece1', fg: '#1a1712', muted: '#6b6456', hair: 'rgba(26,23,18,0.14)',    alt: 'rgba(0,0,0,0.02)',         accent: '#7a5a30' },
+  },
+  ink: {
+    dark:  { bg: '#0a0808', fg: '#ece8e2', muted: '#7d7871', hair: 'rgba(236,232,226,0.1)',  alt: 'rgba(255,255,255,0.02)',   accent: '#9c3b3b' },
+    light: { bg: '#f5f1ea', fg: '#141110', muted: '#6a645b', hair: 'rgba(20,17,16,0.13)',    alt: 'rgba(0,0,0,0.02)',         accent: '#7a2424' },
+  },
+  mono: {
+    dark:  { bg: '#0a0a0a', fg: '#fafaf6', muted: '#777',    hair: 'rgba(255,255,255,0.1)',  alt: 'rgba(255,255,255,0.02)',   accent: '#fafaf6' },
+    light: { bg: '#f6f4ee', fg: '#0a0a0a', muted: '#777',    hair: 'rgba(0,0,0,0.1)',         alt: 'rgba(0,0,0,0.02)',         accent: '#0a0a0a' },
+  },
+};
+
+export default function App() {
+  const [screen, setScreen] = useState('cover');
+  const [activeSongId, setActiveSongId] = useState(null);
+  const [nowId, setNowId] = useState(null);
+  const [unlocked, setUnlocked] = useState(() => {
+    try { return localStorage.getItem('setlist-secret-unlocked') === '1'; } catch (e) { return false; }
+  });
+
+  // aesthetic / themeMode can be wired to UI controls later
+  const [aesthetic] = useState('editorial');
+  const [themeMode] = useState('dark');
+  const fontSize = 16;
+
+  const theme = useMemo(() => THEMES[aesthetic]?.[themeMode] ?? THEMES.editorial.dark, [aesthetic, themeMode]);
+
+  const program = useMemo(() => {
+    const visible = PROGRAM.filter(item => item.type !== 'song' || !item.hidden);
+    if (unlocked && SECRET_SONGS.length > 0) {
+      return [...visible, { type: 'secret-divider' }, ...SECRET_SONGS];
+    }
+    return visible;
+  }, [unlocked]);
+
+  const songItems = useMemo(() => program.filter(item => item.type === 'song'), [program]);
+  const activeSong = activeSongId != null ? songItems.find(s => s.id === activeSongId) : null;
+  const activeSongPos = activeSong ? songItems.indexOf(activeSong) : -1;
+  const hasPrev = activeSongPos > 0;
+  const hasNext = activeSongPos >= 0 && activeSongPos < songItems.length - 1;
+
+  function getLyrics(song) {
+    if (!song) return '';
+    if (song.secret) return SECRET_LYRICS[song.id] || '';
+    return LYRICS[song.id] || '';
+  }
+
+  function openItem(item) {
+    if (item.type === 'song') {
+      setActiveSongId(item.id);
+      setScreen('song');
+    } else if (item.type === 'surprise') {
+      if (unlocked) {
+        setTimeout(() => {
+          const el = document.querySelector('[data-program-scroll]');
+          if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+        }, 30);
+      } else {
+        setScreen('password');
+      }
+    }
+  }
+
+  function toggleNow(id) {
+    setNowId(prev => prev === id ? null : id);
+  }
+
+  function handleSealBroken() {
+    try { localStorage.setItem('setlist-secret-unlocked', '1'); } catch (e) {}
+    setUnlocked(true);
+    setScreen('program');
+    setTimeout(() => {
+      try {
+        const el = document.querySelector('[data-program-scroll]');
+        if (el) el.scrollTo({ top: el.scrollHeight, behavior: 'smooth' });
+      } catch (e) {}
+    }, 80);
+  }
 
   return (
     <div style={{
-      backgroundColor: '#1A1A1D',
-      color: 'white',
-      minHeight: '100vh',
-      padding: '0.4rem'
+      position: 'fixed', inset: 0,
+      fontFamily: 'var(--sans)', background: theme.bg, color: theme.fg,
+      overflow: 'hidden'
     }}>
-      <div style={{
-        maxWidth: '45rm',
-        margin: '0 auto'
-      }}>
-        <h1 style={{
-          fontSize: '2.5rem',
-          fontWeight: 'bold',
-          textAlign: 'center',
-          marginBottom: '2rem',
-          color: '#A64D79'
-        }}>
-          Setlist
-        </h1>
-        
-        <div>
-          {songs.map((song) => (
-            <div 
-              key={song.id} 
-              style={{
-                backgroundColor: '#3B1C32',
-                padding: '1rem',
-                marginBottom: '1rem',
-                borderRadius: '0.5rem',
-                cursor: 'pointer'
-              }}
-              onClick={() => setSelectedSong(selectedSong === song ? null : song)}
-            >
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-              }}>
-                <span style={{ fontSize: '1.25rem' }}>{song.title}</span>
-                <span>{selectedSong === song ? '▲' : '▼'}</span>
-              </div>
-              
-              {selectedSong === song && (
-                <div style={{
-                  marginTop: '1rem',
-                  backgroundColor: '#1A1A1D',
-                  padding: '1rem',
-                  borderRadius: '0.5rem'
-                }}>
-                  {song.lyrics ? (
-                    <LyricDisplay songLyrics={song.lyrics} />
-                  ) : (
-                    <p style={{ color: 'gray', fontStyle: 'italic' }}>
-                      Lyrics will be added soon...
-                    </p>
-                  )}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-
-        <div style={{
-          marginTop: '2rem',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '2rem'
-        }}>
-          <a 
-            href="https://www.instagram.com/danydochev/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ 
-              color: '#A64D79',
-              textDecoration: 'none'
-            }}
-          >
-            Instagram
-          </a>
-          <a 
-            href="https://www.youtube.com/@danydochev" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            style={{ 
-              color: '#A64D79',
-              textDecoration: 'none'
-            }}
-          >
-            YouTube
-          </a>
-        </div>
-      </div>
+      {screen === 'cover' && (
+        <Cover theme={theme} coverPhoto={photos.cover} onEnter={() => setScreen('program')}/>
+      )}
+      {screen === 'program' && (
+        <ProgramView
+          theme={theme} program={program}
+          nowId={nowId} onOpen={openItem}
+          unlocked={unlocked} onSetNow={toggleNow}
+        />
+      )}
+      {screen === 'password' && (
+        <PasswordView
+          theme={theme} pin={SECRET_PIN}
+          onBack={() => setScreen('program')}
+          onUnlock={() => setScreen('seal')}
+        />
+      )}
+      {screen === 'seal' && (
+        <SealView
+          theme={theme}
+          onBack={() => setScreen('program')}
+          onBroken={handleSealBroken}
+        />
+      )}
+      {screen === 'song' && activeSong && (
+        <LyricView
+          song={activeSong} lyrics={getLyrics(activeSong)}
+          theme={theme} songPhoto={photos.song} fontSize={fontSize}
+          onBack={() => setScreen('program')}
+          onPrev={() => { if (hasPrev) setActiveSongId(songItems[activeSongPos - 1].id); }}
+          onNext={() => { if (hasNext) setActiveSongId(songItems[activeSongPos + 1].id); }}
+          hasPrev={hasPrev} hasNext={hasNext}
+        />
+      )}
     </div>
   );
 }
-
-export default App;
