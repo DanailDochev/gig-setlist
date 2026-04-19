@@ -140,9 +140,9 @@ export function Cover({ theme, coverPhoto, onEnter }) {
             letterSpacing: "-0.035em",
           }}
         >
-          Една
+          Мементо
           <br />
-          <i style={{ color: theme.accent, fontWeight: 300 }}>нощ</i>
+          <i style={{ color: theme.accent, fontWeight: 300 }}>21.04.26</i>
         </div>
         <div
           style={{
