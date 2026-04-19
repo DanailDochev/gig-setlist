@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"c:/Future Disk D/C O D E/gig-setlist/src/data\")",
+      "Bash(mkdir -p \"c:/Future Disk D/C O D E/gig-setlist/src/components\")",
+      "Bash(mkdir -p \"c:/Future Disk D/C O D E/gig-setlist/public/assets\")",
+      "Bash(cp \"c:/Future Disk D/C O D E/gig-setlist/prototype/assets/photo-01.jpg\" \"c:/Future Disk D/C O D E/gig-setlist/public/assets/\")",
+      "Bash(cp \"c:/Future Disk D/C O D E/gig-setlist/prototype/assets/photo-02.jpg\" \"c:/Future Disk D/C O D E/gig-setlist/public/assets/\")"
+    ]
+  }
+}
