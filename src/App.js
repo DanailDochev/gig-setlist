@@ -38,7 +38,7 @@ export default function App() {
   });
 
   // aesthetic / themeMode can be wired to UI controls later
-  const [aesthetic] = useState('editorial');
+  const [aesthetic] = useState('ink');
   const [themeMode] = useState('dark');
   const fontSize = 16;
 
