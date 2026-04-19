@@ -107,8 +107,6 @@ window.PROGRAM = [
 ];
 
 // ---- СЕКРЕТЕН КАРАОКЕ РАЗДЕЛ ----
-// PIN код (смени го тук — 4 цифри):
-window.SECRET_PIN = "2104";
 
 // Плейсхолдъри за 5 тайни песни. Попълни title, duration, key и lyrics по-късно.
 window.SECRET_SONGS = [

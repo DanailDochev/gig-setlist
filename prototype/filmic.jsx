@@ -1,9 +1,9 @@
 // Филмична/редакторска естетика · bg-only
 const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
-// ── SWAP COVER IMAGE HERE ─────────────────────────────────────────────────────
-// Change this path to try a different photo. The glow overlay reacts to it.
-const COVER_PHOTO = "assets/photo-04.jpg";
+// ── CHANGE THESE BEFORE EACH GIG ─────────────────────────────────────────────
+const COVER_PHOTO = "assets/photo-04.jpg"; // swap photo here
+const SECRET_PIN  = "1985";               // 4-digit unlock code
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ---- grain ----
@@ -1965,7 +1965,7 @@ function PasswordView({ theme, onBack, onUnlock }) {
 
   const submit = useCallback(
     (pin) => {
-      const expected = (window.SECRET_PIN || "").toString();
+      const expected = SECRET_PIN;
       if (pin === expected && expected.length > 0) {
         setStatus("ok");
         setTimeout(() => onUnlock(), 480);
