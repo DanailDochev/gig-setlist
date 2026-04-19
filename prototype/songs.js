@@ -2,33 +2,161 @@
 // type: 'song' | 'break' | 'surprise'
 // karaoke: true за песните с публични текстове
 window.PROGRAM = [
-  { type: 'song', id: 1, title: 'Двупосочен билет', duration: '3:42', key: 'Am', karaoke: true },
-  { type: 'song', id: 2, title: 'Още малко само', duration: '4:10', key: 'G',  karaoke: false },
-  { type: 'song', id: 3, title: 'Парфюм',          duration: '3:28', key: 'Dm', karaoke: true },
-  { type: 'song', id: 4, title: 'Бриз',             duration: '3:50', key: 'C',  karaoke: false },
-  { type: 'song', id: 5, title: 'Все едно',         duration: '3:15', key: 'Em', karaoke: true },
-  { type: 'break', title: 'Пауза', note: 'кратко — да напълним чашите' },
-  { type: 'song', id: 6, title: 'Тайна',            duration: '3:33', key: 'F#m', karaoke: false },
-  { type: 'song', id: 7, title: 'Край',             duration: '4:02', key: 'Bm', karaoke: false },
-  { type: 'song', id: 8, title: 'Подпис',           duration: '4:20', key: 'A',  karaoke: true },
-  { type: 'song', id: 9, title: 'Дим',              duration: '3:48', key: 'Dm', karaoke: false },
-  { type: 'song', id: 10, title: 'Някъде там',      duration: '4:15', key: 'G',  karaoke: false },
-  { type: 'song', id: 11, title: 'Вино',            duration: '3:55', key: 'Am', karaoke: true },
-  { type: 'break', title: 'Пуш пауза', note: 'запали, почини — после финала', icon: 'cigarette' },
-  { type: 'surprise', title: 'Изненада', note: 'ще разберете накрая', secretTitle: 'Тайният кавър', secretNote: 'задръж до края — ще те изненадаме на живо 🤫' }
+  {
+    type: "song",
+    id: 1,
+    title: "Двупосочен билет",
+    duration: "3:42",
+    key: "Am",
+    karaoke: true,
+  },
+  {
+    type: "song",
+    id: 2,
+    title: "Още малко само",
+    duration: "4:10",
+    key: "G",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 3,
+    title: "Парфюм",
+    duration: "3:28",
+    key: "Dm",
+    karaoke: true,
+  },
+  {
+    type: "song",
+    id: 4,
+    title: "Бриз",
+    duration: "3:50",
+    key: "C",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 5,
+    title: "Все едно",
+    duration: "3:15",
+    key: "Em",
+    karaoke: true,
+  },
+  { type: "break", title: "Пауза", note: "да напълним чашите" },
+  {
+    type: "song",
+    id: 6,
+    title: "Тайна",
+    duration: "3:33",
+    key: "F#m",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 7,
+    title: "Край",
+    duration: "4:02",
+    key: "Bm",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 8,
+    title: "Подпис",
+    duration: "4:20",
+    key: "A",
+    karaoke: true,
+  },
+  {
+    type: "song",
+    id: 9,
+    title: "Дим",
+    duration: "3:48",
+    key: "Dm",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 10,
+    title: "Някъде там",
+    duration: "4:15",
+    key: "G",
+    karaoke: false,
+  },
+  {
+    type: "song",
+    id: 11,
+    title: "Вино",
+    duration: "3:55",
+    key: "Am",
+    karaoke: true,
+  },
+  {
+    type: "break",
+    title: "Пуш пауза",
+    note: "запали, почини и от утре спри",
+    icon: "cigarette",
+  },
+  {
+    type: "surprise",
+    title: "Изненада",
+    note: "ще разберете накрая",
+    secretTitle: "Тайният кавър",
+    secretNote: "задръж до края — ще те изненадаме на живо 🤫",
+  },
 ];
 
 // ---- СЕКРЕТЕН КАРАОКЕ РАЗДЕЛ ----
 // PIN код (смени го тук — 4 цифри):
-window.SECRET_PIN = '1985';
+window.SECRET_PIN = "1985";
 
 // Плейсхолдъри за 5 тайни песни. Попълни title, duration, key и lyrics по-късно.
 window.SECRET_SONGS = [
-  { type: 'song', id: 'S1', title: 'Тайна песен 1', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S2', title: 'Тайна песен 2', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S3', title: 'Тайна песен 3', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S4', title: 'Тайна песен 4', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S5', title: 'Тайна песен 5', duration: '0:00', key: '—', karaoke: true, secret: true },
+  {
+    type: "song",
+    id: "S1",
+    title: "Тайна песен 1",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S2",
+    title: "Тайна песен 2",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S3",
+    title: "Тайна песен 3",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S4",
+    title: "Тайна песен 4",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S5",
+    title: "Тайна песен 5",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
 ];
 
 // Плейсхолдър текстове — попълни по-късно.
@@ -239,5 +367,5 @@ window.LYRICS = {
 вино по тавана
 и по белите стени
 споменът остана
-от безумните ни дни`
+от безумните ни дни`,
 };

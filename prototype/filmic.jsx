@@ -413,7 +413,7 @@ function ProgramView({
         <div
           style={{
             fontFamily: "var(--mono)",
-            fontSize: 9,
+            fontSize: 11,
             color: theme.muted,
             letterSpacing: 2,
             marginTop: 14,
@@ -842,7 +842,7 @@ function CigaretteIcon({ color = "#b89968", size = 52 }) {
         strokeWidth="0.5"
         opacity="0.4"
       />
-      {/* burning tip — no circle, just a small ember rect */}
+      {/* burning tip — no circle, just a small ember rect
       <rect
         x="76"
         y="15"
@@ -852,7 +852,7 @@ function CigaretteIcon({ color = "#b89968", size = 52 }) {
         fill={`${color}55`}
         stroke={color}
         strokeWidth="0.6"
-      />
+      /> */}
       {/* curly smoke wisps */}
       <path
         d="M82 13 C 84 9, 80 6, 83 2"
@@ -1654,7 +1654,7 @@ function PauseView({ item, theme, onBack }) {
           <div
             style={{
               fontFamily: "var(--mono)",
-              fontSize: 10,
+              fontSize: 11,
               letterSpacing: 3,
               color: theme.muted,
               marginTop: 38,

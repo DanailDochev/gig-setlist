@@ -9,42 +9,179 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ── PIN за тайния сет (4 цифри) ──────────────────────────────────────────────
-export const SECRET_PIN = '1985';
+export const SECRET_PIN = "1985";
 
 // ── Програма ─────────────────────────────────────────────────────────────────
 // hidden: true  → песента е в базата но не се показва на концерт
 // karaoke: true → показва иконка "♪ пей с нас" в реда
 export const PROGRAM = [
-  { type: 'song', id: 1,  title: 'Двупосочен билет', duration: '3:42', key: 'Am',  karaoke: true,  hidden: false },
-  { type: 'song', id: 2,  title: 'Още малко само',   duration: '4:10', key: 'G',   karaoke: false, hidden: false },
-  { type: 'song', id: 3,  title: 'Парфюм',           duration: '3:28', key: 'Dm',  karaoke: true,  hidden: false },
-  { type: 'song', id: 4,  title: 'Бриз',             duration: '3:50', key: 'C',   karaoke: false, hidden: false },
-  { type: 'song', id: 5,  title: 'Все едно',         duration: '3:15', key: 'Em',  karaoke: true,  hidden: false },
-  { type: 'break', title: 'Пауза', note: 'кратко — да напълним чашите' },
-  { type: 'song', id: 6,  title: 'Тайна',            duration: '3:33', key: 'F#m', karaoke: false, hidden: false },
-  { type: 'song', id: 7,  title: 'Край',             duration: '4:02', key: 'Bm',  karaoke: false, hidden: false },
-  { type: 'song', id: 8,  title: 'Подпис',           duration: '4:20', key: 'A',   karaoke: true,  hidden: false },
-  { type: 'song', id: 9,  title: 'Дим',              duration: '3:48', key: 'Dm',  karaoke: false, hidden: false },
-  { type: 'song', id: 10, title: 'Някъде там',       duration: '4:15', key: 'G',   karaoke: false, hidden: false },
-  { type: 'song', id: 11, title: 'Вино',             duration: '3:55', key: 'Am',  karaoke: true,  hidden: false },
-  { type: 'break', title: 'Пуш пауза', note: 'запали, почини — после финала', icon: 'cigarette' },
-  { type: 'surprise', title: 'Изненада', note: 'ще разберете накрая', secretTitle: 'Тайният кавър' },
+  {
+    type: "song",
+    id: 1,
+    title: "Двупосочен билет",
+    duration: "3:42",
+    key: "Am",
+    karaoke: true,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 2,
+    title: "Още малко само",
+    duration: "4:10",
+    key: "G",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 3,
+    title: "Парфюм",
+    duration: "3:28",
+    key: "Dm",
+    karaoke: true,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 4,
+    title: "Бриз",
+    duration: "3:50",
+    key: "C",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 5,
+    title: "Все едно",
+    duration: "3:15",
+    key: "Em",
+    karaoke: true,
+    hidden: false,
+  },
+  { type: "break", title: "Пауза", note: "да напълним чашите" },
+  {
+    type: "song",
+    id: 6,
+    title: "Тайна",
+    duration: "3:33",
+    key: "F#m",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 7,
+    title: "Край",
+    duration: "4:02",
+    key: "Bm",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 8,
+    title: "Подпис",
+    duration: "4:20",
+    key: "A",
+    karaoke: true,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 9,
+    title: "Дим",
+    duration: "3:48",
+    key: "Dm",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 10,
+    title: "Някъде там",
+    duration: "4:15",
+    key: "G",
+    karaoke: false,
+    hidden: false,
+  },
+  {
+    type: "song",
+    id: 11,
+    title: "Вино",
+    duration: "3:55",
+    key: "Am",
+    karaoke: true,
+    hidden: false,
+  },
+  {
+    type: "break",
+    title: "Пуш пауза",
+    note: "запали, почини и от утре спри",
+    icon: "cigarette",
+  },
+  {
+    type: "surprise",
+    title: "Изненада",
+    note: "ще разберете накрая",
+    secretTitle: "Тайният кавър",
+  },
 ];
 
 // ── Тайни песни (след въвеждане на PIN) ──────────────────────────────────────
 export const SECRET_SONGS = [
-  { type: 'song', id: 'S1', title: 'Тайна песен 1', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S2', title: 'Тайна песен 2', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S3', title: 'Тайна песен 3', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S4', title: 'Тайна песен 4', duration: '0:00', key: '—', karaoke: true, secret: true },
-  { type: 'song', id: 'S5', title: 'Тайна песен 5', duration: '0:00', key: '—', karaoke: true, secret: true },
+  {
+    type: "song",
+    id: "S1",
+    title: "Тайна песен 1",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S2",
+    title: "Тайна песен 2",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S3",
+    title: "Тайна песен 3",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S4",
+    title: "Тайна песен 4",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
+  {
+    type: "song",
+    id: "S5",
+    title: "Тайна песен 5",
+    duration: "0:00",
+    key: "—",
+    karaoke: true,
+    secret: true,
+  },
 ];
 
 // ── Текстове ──────────────────────────────────────────────────────────────────
 // Формат на секции: [куплет 1], [припев], [бридж] и т.н. на отделен ред.
 // Редове в квадратни скоби се показват като секционни маркери.
 export const LYRICS = {
-
   // ── 1 · Двупосочен билет ────────────────────────────────────────────────────
   1: `[куплет 1]
 остави каквото е счупено
