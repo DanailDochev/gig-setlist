@@ -1,6 +1,6 @@
 export function CigaretteIcon({ color = '#b89968', size = 52 }) {
   return (
-    <svg width={size * 2.2} height={size * 0.7} viewBox="0 0 110 36" fill="none">
+    <svg width={size * 2.2} height={size * 0.7} viewBox="0 0 110 36" fill="none" overflow="visible">
       <rect x="0" y="13" width="18" height="10" rx="1" stroke={color} strokeWidth="1" fill={`${color}22`}/>
       <rect x="18" y="13" width="58" height="10" rx="0.5" stroke={color} strokeWidth="1" fill="none"/>
       <line x1="34" y1="13" x2="34" y2="23" stroke={color} strokeWidth="0.5" opacity="0.4"/>
