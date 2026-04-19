@@ -5,13 +5,18 @@ export function CigaretteIcon({ color = '#b89968', size = 52 }) {
       <rect x="18" y="13" width="58" height="10" rx="0.5" stroke={color} strokeWidth="1" fill="none"/>
       <line x1="34" y1="13" x2="34" y2="23" stroke={color} strokeWidth="0.5" opacity="0.4"/>
       <line x1="50" y1="13" x2="50" y2="23" stroke={color} strokeWidth="0.5" opacity="0.4"/>
-      <rect x="76" y="15" width="6" height="6" rx="0.5" fill={`${color}55`} stroke={color} strokeWidth="0.6"/>
-      <path d="M82 13 C 84 9, 80 6, 83 2" stroke={color} strokeWidth="0.9" fill="none" opacity="0.55"
-        style={{ animation: 'smokeCurl 4s ease-in-out infinite', transformOrigin: '82px 13px' }}/>
-      <path d="M85 12 C 88 7, 84 4, 87 0" stroke={color} strokeWidth="0.65" fill="none" opacity="0.38"
-        style={{ animation: 'smokeCurl 5.2s ease-in-out 0.6s infinite', transformOrigin: '85px 12px' }}/>
-      <path d="M89 13 C 91 8, 88 5, 91 1" stroke={color} strokeWidth="0.5" fill="none" opacity="0.25"
-        style={{ animation: 'smokeCurl 3.8s ease-in-out 1.1s infinite', transformOrigin: '89px 13px' }}/>
+      <path d="M81 13 C 78 8, 83 4, 79 -1" stroke={color} strokeWidth="1.1" fill="none" opacity="0.75"
+        style={{ animation: 'smokeCurl 3.6s ease-in-out infinite', transformOrigin: '81px 13px' }}/>
+      <path d="M84 12 C 87 6, 82 2, 86 -3" stroke={color} strokeWidth="1.0" fill="none" opacity="0.65"
+        style={{ animation: 'smokeCurl 4.8s ease-in-out 0.4s infinite', transformOrigin: '84px 12px' }}/>
+      <path d="M87 13 C 90 7, 86 3, 90 -2" stroke={color} strokeWidth="0.85" fill="none" opacity="0.55"
+        style={{ animation: 'smokeCurl 3.9s ease-in-out 0.9s infinite', transformOrigin: '87px 13px' }}/>
+      <path d="M83 11 C 80 5, 85 1, 81 -4" stroke={color} strokeWidth="0.75" fill="none" opacity="0.45"
+        style={{ animation: 'smokeCurl 5.5s ease-in-out 1.5s infinite', transformOrigin: '83px 11px' }}/>
+      <path d="M86 12 C 90 5, 85 0, 89 -5" stroke={color} strokeWidth="0.6" fill="none" opacity="0.35"
+        style={{ animation: 'smokeCurl 4.2s ease-in-out 2.1s infinite', transformOrigin: '86px 12px' }}/>
+      <path d="M80 13 C 77 6, 82 2, 78 -3" stroke={color} strokeWidth="0.5" fill="none" opacity="0.28"
+        style={{ animation: 'smokeCurl 6.0s ease-in-out 0.7s infinite', transformOrigin: '80px 13px' }}/>
     </svg>
   );
 }
