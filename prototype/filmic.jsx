@@ -3,7 +3,7 @@ const { useState, useEffect, useRef, useMemo, useCallback } = React;
 
 // ── CHANGE THESE BEFORE EACH GIG ─────────────────────────────────────────────
 const COVER_PHOTO = "assets/photo-04.jpg"; // swap photo here
-const SECRET_PIN  = "1985";               // 4-digit unlock code
+const SECRET_PIN  = "2104";               // 4-digit unlock code
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ---- grain ----
