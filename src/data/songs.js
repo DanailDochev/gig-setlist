@@ -128,7 +128,6 @@ export const PROGRAM = [
     secretTitle: "Тайният кавър",
   },
 ];
-\
 
 // ── Тайни песни (след въвеждане на PIN) ──────────────────────────────────────
 export const SECRET_SONGS = [
