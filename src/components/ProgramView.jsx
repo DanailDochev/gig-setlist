@@ -45,7 +45,7 @@ function SecretDivider({ theme }) {
             marginBottom: 2,
           }}
         >
-          отключен
+          отключено
         </div>
         <div
           style={{
@@ -91,7 +91,7 @@ function SurpriseRow({ item, theme, onOpen, unlocked }) {
           textTransform: "uppercase",
         }}
       >
-        {unlocked ? "финал · отворен" : "финал"}
+        {unlocked ? "финал" : "финал"}
       </div>
       <div
         style={{

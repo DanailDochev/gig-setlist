@@ -27,7 +27,7 @@ export function LyricView({ song, lyrics, theme, songPhoto, fontSize = 16, onBac
           fontFamily: 'var(--mono)', fontSize: 10, letterSpacing: 2.5,
           cursor: 'pointer', textTransform: 'uppercase', padding: 0
         }}>← програма</button>
-        {song.karaoke && (
+        {song.karaoke && song.secret && (
           <span style={{ fontFamily: 'var(--mono)', fontSize: 10, color: theme.accent, letterSpacing: 2 }}>
             ♪ пей с нас
           </span>
