@@ -437,19 +437,23 @@ function ProgramView({
       </div>
 
       <div style={{ padding: "4px 0 80px" }}>
-        {program.map((item, i) => (
-          <ProgramRow
-            key={i}
-            item={item}
-            index={i}
-            theme={theme}
-            isNow={i === nowIndex}
-            past={i < nowIndex}
-            onOpen={() => onOpen(i)}
-            onLock={onLock}
-            unlocked={unlocked}
-          />
-        ))}
+        {(() => {
+          const secretDividerIdx = program.findIndex(p => p.type === "secret-divider");
+          return program.map((item, i) => (
+            <ProgramRow
+              key={i}
+              item={item}
+              index={i}
+              theme={theme}
+              isNow={i === nowIndex}
+              past={i < nowIndex}
+              onOpen={() => onOpen(i)}
+              onLock={onLock}
+              unlocked={unlocked}
+              isSecret={secretDividerIdx >= 0 && i > secretDividerIdx}
+            />
+          ));
+        })()}
       </div>
     </div>
   );
@@ -965,6 +969,7 @@ function ProgramRow({
   onOpen,
   onLock,
   unlocked,
+  isSecret,
 }) {
   if (item.type === "secret-divider") {
     return <SecretDivider theme={theme} onLock={onLock} />;
@@ -1145,7 +1150,7 @@ function ProgramRow({
               СЕГА
             </span>
           )}
-          {item.karaoke && (
+          {isSecret && (
             <span
               style={{
                 fontFamily: "var(--mono)",
