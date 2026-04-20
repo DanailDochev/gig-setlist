@@ -21,7 +21,7 @@ export const PROGRAM = [
     title: "Двупосочен билет",
     duration: "3:42",
     key: "Am",
-    karaoke: true,
+    karaoke: false,
     hidden: false,
   },
   {
@@ -39,7 +39,7 @@ export const PROGRAM = [
     title: "Парфюм",
     duration: "3:28",
     key: "Dm",
-    karaoke: true,
+    karaoke: false,
     hidden: false,
   },
   {
@@ -57,7 +57,7 @@ export const PROGRAM = [
     title: "Все едно",
     duration: "3:15",
     key: "Em",
-    karaoke: true,
+    karaoke: false,
     hidden: false,
   },
   { type: "break", title: "Пауза", note: "да напълним чашите" },
@@ -85,7 +85,7 @@ export const PROGRAM = [
     title: "Подпис",
     duration: "4:20",
     key: "A",
-    karaoke: true,
+    karaoke: false,
     hidden: false,
   },
   {
@@ -112,7 +112,7 @@ export const PROGRAM = [
     title: "Вино",
     duration: "3:55",
     key: "Am",
-    karaoke: true,
+    karaoke: false,
     hidden: false,
   },
   {
@@ -128,6 +128,7 @@ export const PROGRAM = [
     secretTitle: "Тайният кавър",
   },
 ];
+\
 
 // ── Тайни песни (след въвеждане на PIN) ──────────────────────────────────────
 export const SECRET_SONGS = [
@@ -702,7 +703,7 @@ export const LYRICS = {
 };
 
 // ── Тайни текстове ────────────────────────────────────────────────────────────
-export const SECRET_LYRICS = {
+export const KARAOKE_LYRICS = {
   S1: `[тук сложи текста на тайна песен 1]`,
   S2: `[тук сложи текста на тайна песен 2]`,
   S3: `[тук сложи текста на тайна песен 3]`,

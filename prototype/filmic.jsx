@@ -438,7 +438,9 @@ function ProgramView({
 
       <div style={{ padding: "4px 0 80px" }}>
         {(() => {
-          const secretDividerIdx = program.findIndex(p => p.type === "secret-divider");
+          const secretDividerIdx = program.findIndex(
+            (p) => p.type === "secret-divider",
+          );
           return program.map((item, i) => (
             <ProgramRow
               key={i}
@@ -1196,7 +1198,7 @@ function LyricView({
 }) {
   const lyrics =
     (window.LYRICS && window.LYRICS[song.id]) ||
-    (window.SECRET_LYRICS && window.SECRET_LYRICS[song.id]);
+    (window.KARAOKE_LYRICS && window.KARAOKE_LYRICS[song.id]);
   const lines = useMemo(() => (lyrics || "").split("\n"), [lyrics]);
 
   return (
