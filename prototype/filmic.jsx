@@ -1788,7 +1788,7 @@ function RiddleView({ theme, onBack, onSolved }) {
             style={{
               fontFamily: "var(--serif-text)",
               fontStyle: "italic",
-              fontSize: 13.5,
+              fontSize: 17,
               lineHeight: 1.72,
               color: theme.fg,
               opacity: 0.7,

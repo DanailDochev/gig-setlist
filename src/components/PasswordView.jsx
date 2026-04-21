@@ -168,9 +168,7 @@ export function PasswordView({ theme, pin, onBack, onUnlock }) {
             alignSelf: "center",
             lineHeight: 1.5,
           }}
-        >
-          само хората които трябва да знаят, знаят.
-        </div>
+        ></div>
 
         {/* dots */}
         <div

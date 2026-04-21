@@ -59,7 +59,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
             background: "transparent",
             border: "none",
             fontFamily: "var(--mono)",
-            fontSize: 9,
+            fontSize: 12,
             letterSpacing: 4,
             color: theme.muted,
             textTransform: "uppercase",
@@ -74,7 +74,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
           <div
             style={{
               fontFamily: "var(--mono)",
-              fontSize: 9,
+              fontSize: 30,
               letterSpacing: 6,
               color: theme.accent,
               textTransform: "uppercase",
@@ -86,8 +86,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
           <div
             style={{
               fontFamily: "var(--serif-text)",
-              fontStyle: "italic",
-              fontSize: 20,
+              fontSize: 28,
               lineHeight: 1.72,
               color: theme.fg,
               opacity: 0.7,
@@ -161,7 +160,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
           <span
             style={{
               fontFamily: "var(--mono)",
-              fontSize: 8,
+              fontSize: 13,
               letterSpacing: 3,
               color: theme.muted,
               textTransform: "uppercase",
@@ -205,7 +204,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
             <div
               style={{
                 fontFamily: "var(--mono)",
-                fontSize: 8,
+                fontSize: 13,
                 letterSpacing: 4,
                 color: theme.muted,
                 textTransform: "uppercase",

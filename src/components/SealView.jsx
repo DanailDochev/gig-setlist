@@ -79,7 +79,7 @@ export function SealView({ theme, onBack, onBroken }) {
             border: "none",
             color: theme.muted,
             fontFamily: "var(--mono)",
-            fontSize: 9,
+            fontSize: 12,
             letterSpacing: 3,
             textTransform: "uppercase",
             cursor: "pointer",
@@ -130,7 +130,7 @@ export function SealView({ theme, onBack, onBroken }) {
             marginBottom: 14,
           }}
         >
-          последна стъпка
+          предпоследна стъпка
         </div>
         <div
           style={{
