@@ -225,16 +225,17 @@ function ProgramRow({
 
   // song row
   const num = String(item.id).padStart(2, "0");
+  const Tag = item.secret ? "button" : "div";
   return (
-    <button
-      onClick={onOpen}
+    <Tag
+      onClick={item.secret ? onOpen : undefined}
       style={{
         width: "100%",
         background: isNow ? `${theme.accent}10` : "transparent",
         border: "none",
         padding: isNow ? "18px 22px" : "16px 22px",
         textAlign: "left",
-        cursor: "pointer",
+        cursor: item.secret ? "pointer" : "default",
         display: "flex",
         alignItems: "center",
         gap: 14,
@@ -356,7 +357,7 @@ function ProgramRow({
       >
         {item.duration}
       </span>
-    </button>
+    </Tag>
   );
 }
 
