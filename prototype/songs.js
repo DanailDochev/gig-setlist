@@ -113,7 +113,7 @@ window.KARAOKE_SONGS = [
   {
     type: "song",
     id: "S1",
-    title: "Тайна песен 1",
+    title: "Фалшив герой",
     duration: "0:00",
     key: "—",
     karaoke: true,

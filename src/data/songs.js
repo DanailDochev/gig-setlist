@@ -18,7 +18,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 1,
-    title: "Двупосочен билет",
+    title: "Същата болка (неиздадена)",
     duration: "3:42",
     key: "Am",
     karaoke: false,
@@ -27,7 +27,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 2,
-    title: "Още малко само",
+    title: "Вино (неиздадена)",
     duration: "4:10",
     key: "G",
     karaoke: false,
@@ -82,7 +82,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 8,
-    title: "Подпис",
+    title: "Карам",
     duration: "4:20",
     key: "A",
     karaoke: false,
@@ -134,7 +134,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S1",
-    title: "Тайна песен 1",
+    title: "Фалшив герой",
     duration: "0:00",
     key: "—",
     karaoke: true,
@@ -760,12 +760,7 @@ export const KARAOKE_LYRICS = {
 
 Ти си скрита тъга и плачеш в мен, кажи ми че ще те има.
 Ти не идваш сама и носиш ноща, кажи ми че ще те има.
-
-Ти си скрита тъга и плачеш в мен, кажи ми че ще те има.
-Ти не идваш сама и носиш ноща, кажи ми че ще те има.
-
-Ти си скрита тъга и плачеш в мен, кажи ми че ще те има.
-Ти не идваш сама и носиш ноща, кажи ми че ще те има.`,
+`,
   S3: `
 [Дони]
 Ела във очите ми, ела близо до сълзите ми,
