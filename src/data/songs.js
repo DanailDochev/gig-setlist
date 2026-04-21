@@ -100,7 +100,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 10,
-    title: "Парюм",
+    title: "Пафрюм",
     duration: "4:15",
     key: "G",
     karaoke: false,
