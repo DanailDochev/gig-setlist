@@ -2415,11 +2415,11 @@ window.FilmicApp = function FilmicApp({
     }
   });
   const program = useMemo(() => {
-    if (unlocked && window.SECRET_SONGS) {
+    if (unlocked && window.KARAOKE_SONGS) {
       return [
         ...baseProgram,
         { type: "secret-divider" },
-        ...window.SECRET_SONGS,
+        ...window.KARAOKE_SONGS,
       ];
     }
     return baseProgram;

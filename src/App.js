@@ -2,7 +2,7 @@ import { useState, useMemo } from "react";
 import "./App.css";
 import {
   PROGRAM,
-  SECRET_SONGS,
+  KARAOKE_SONGS,
   SECRET_PIN,
   LYRICS,
   KARAOKE_LYRICS,
@@ -12,6 +12,7 @@ import { ProgramView } from "./components/ProgramView";
 import { LyricView } from "./components/LyricView";
 import { PasswordView } from "./components/PasswordView";
 import { SealView } from "./components/SealView";
+import { RiddleView } from "./components/RiddleView";
 
 const PUBLIC_URL = process.env.PUBLIC_URL || "";
 
@@ -103,8 +104,8 @@ export default function App() {
     const visible = PROGRAM.filter(
       (item) => item.type !== "song" || !item.hidden,
     );
-    if (unlocked && SECRET_SONGS.length > 0) {
-      return [...visible, { type: "secret-divider" }, ...SECRET_SONGS];
+    if (unlocked && KARAOKE_SONGS.length > 0) {
+      return [...visible, { type: "karaoke-divider" }, ...KARAOKE_SONGS];
     }
     return visible;
   }, [unlocked]);
@@ -145,7 +146,7 @@ export default function App() {
     setNowId((prev) => (prev === id ? null : id));
   }
 
-  function handleSealBroken() {
+  function handleRiddleSolved() {
     try {
       localStorage.setItem("setlist-secret-unlocked", "1");
     } catch (e) {}
@@ -199,7 +200,14 @@ export default function App() {
         <SealView
           theme={theme}
           onBack={() => setScreen("program")}
-          onBroken={handleSealBroken}
+          onBroken={() => setScreen("riddle")}
+        />
+      )}
+      {screen === "riddle" && (
+        <RiddleView
+          theme={theme}
+          onBack={() => setScreen("program")}
+          onSolved={handleRiddleSolved}
         />
       )}
       {screen === "song" && activeSong && (

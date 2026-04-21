@@ -109,7 +109,7 @@ window.PROGRAM = [
 // ---- СЕКРЕТЕН КАРАОКЕ РАЗДЕЛ ----
 
 // Плейсхолдъри за 5 тайни песни. Попълни title, duration, key и lyrics по-късно.
-window.SECRET_SONGS = [
+window.KARAOKE_SONGS = [
   {
     type: "song",
     id: "S1",

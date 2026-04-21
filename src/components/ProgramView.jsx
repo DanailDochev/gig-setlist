@@ -1,6 +1,6 @@
 import { CigaretteIcon, WineGlass } from "./Icons";
 
-function SecretDivider({ theme }) {
+function KaraokeDivider({ theme }) {
   return (
     <div
       style={{
@@ -144,7 +144,7 @@ function ProgramRow({
   unlocked,
   onSetNow,
 }) {
-  if (item.type === "secret-divider") return <SecretDivider theme={theme} />;
+  if (item.type === "karaoke-divider") return <KaraokeDivider theme={theme} />;
 
   if (item.type === "break") {
     return (
@@ -328,7 +328,7 @@ function ProgramRow({
               СЕГА
             </span>
           )}
-          {item.karaoke && (
+          {item.secret && (
             <span
               style={{
                 fontFamily: "var(--mono)",
