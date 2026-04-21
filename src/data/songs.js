@@ -161,7 +161,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S4",
-    title: "Губя Контрол - Миро",
+    title: "Миро - Губя Контрол",
     duration: "0:00",
     key: "—",
     karaoke: true,
