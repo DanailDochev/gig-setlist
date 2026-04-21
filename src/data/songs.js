@@ -36,7 +36,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 3,
-    title: "Парфюм",
+    title: "Ти си тя",
     duration: "3:28",
     key: "Dm",
     karaoke: false,
@@ -45,7 +45,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 4,
-    title: "Бриз",
+    title: "Карам",
     duration: "3:50",
     key: "C",
     karaoke: false,
@@ -54,7 +54,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 5,
-    title: "Все едно",
+    title: "Точна доза",
     duration: "3:15",
     key: "Em",
     karaoke: false,
@@ -64,7 +64,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 6,
-    title: "Тайна",
+    title: "Нашата любов",
     duration: "3:33",
     key: "F#m",
     karaoke: false,
@@ -73,7 +73,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 7,
-    title: "Край",
+    title: "Дим",
     duration: "4:02",
     key: "Bm",
     karaoke: false,
@@ -82,7 +82,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 8,
-    title: "Карам",
+    title: "Тайна",
     duration: "4:20",
     key: "A",
     karaoke: false,
@@ -91,7 +91,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 9,
-    title: "Дим",
+    title: "На хартия",
     duration: "3:48",
     key: "Dm",
     karaoke: false,
@@ -109,7 +109,7 @@ export const PROGRAM = [
   {
     type: "song",
     id: 11,
-    title: "Вино",
+    title: "Край",
     duration: "3:55",
     key: "Am",
     karaoke: false,
@@ -170,7 +170,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S5",
-    title: "Тайна песен 5",
+    title: "Mashup",
     duration: "0:00",
     key: "—",
     karaoke: true,
