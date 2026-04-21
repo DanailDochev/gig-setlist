@@ -113,7 +113,7 @@ window.KARAOKE_SONGS = [
   {
     type: "song",
     id: "S1",
-    title: "Фалшив герой",
+    title: "Фалшив герой - Тодор Колев",
     duration: "0:00",
     key: "—",
     karaoke: true,

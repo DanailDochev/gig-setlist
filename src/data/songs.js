@@ -134,7 +134,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S1",
-    title: "Фалшив герой",
+    title: "Тодор Колев - Фалшив герой",
     duration: "0:00",
     key: "—",
     karaoke: true,
@@ -143,7 +143,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S2",
-    title: "Тайна песен 2",
+    title: "Нина Николина - Ти",
     duration: "0:00",
     key: "—",
     karaoke: true,
@@ -152,7 +152,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S3",
-    title: "Тайна песен 3",
+    title: "Дони и Нети - Този Филм",
     duration: "0:00",
     key: "—",
     karaoke: true,
@@ -161,7 +161,7 @@ export const KARAOKE_SONGS = [
   {
     type: "song",
     id: "S4",
-    title: "Тайна песен 4",
+    title: "Губя Контрол - Миро",
     duration: "0:00",
     key: "—",
     karaoke: true,
