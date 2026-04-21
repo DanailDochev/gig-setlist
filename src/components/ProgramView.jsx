@@ -116,7 +116,7 @@ function SurpriseRow({ item, theme, onOpen, unlocked }) {
           fontStyle: "italic",
         }}
       >
-        {unlocked ? "тайните песни са долу ↓" : "натисни за да отключиш"}
+        {unlocked ? "↓ погледни долу ↓" : "натисни за да отключиш"}
       </div>
       <div
         style={{

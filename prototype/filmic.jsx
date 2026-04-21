@@ -430,7 +430,7 @@ function ProgramView({
           {unlocked && (
             <>
               <span>·</span>
-              <span style={{ color: theme.accent }}>+5 тайни</span>
+              <span style={{ color: theme.accent }}>караоке</span>
             </>
           )}
         </div>
