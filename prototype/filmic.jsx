@@ -1702,7 +1702,7 @@ function PauseView({ item, theme, onBack }) {
 const RIDDLE_WORD = "КАРАОКЕ".split("");
 const RIDDLE_SHOWN = new Set([0, RIDDLE_WORD.length - 1]); // К and Е pre-revealed
 const RIDDLE_TEXT =
-  "Забавление, при което ентусиасти пеят под акомпанимента на известни песни, само инструментала. Обикновено има сцена с микрофон и екран, на който се показва текста на песента заедно с музиката.";
+  "Забавление, при което ентусиасти пеят под акомпанимента на известни песни. Обикновено има сцена с микрофон и екран, на който се показва текста на песента заедно с музиката.";
 const RIDDLE_ALPHA = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ".split("");
 
 function RiddleView({ theme, onBack, onSolved }) {
@@ -1894,7 +1894,7 @@ function RiddleView({ theme, onBack, onSolved }) {
               color: theme.accent,
             }}
           >
-            БРАВО ✦ Финалът е открит
+            Браво!✦ финалът е отключен
           </div>
         )}
 

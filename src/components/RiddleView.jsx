@@ -3,7 +3,7 @@ import { useState } from "react";
 const WORD = "КАРАОКЕ".split("");
 const SHOWN = new Set([0, WORD.length - 1]); // К and Е pre-revealed
 const RIDDLE =
-  "Забавление, при което ентусиасти пеят под акомпанимента на известни песни, само инструментала. Обикновено има сцена с микрофон и екран, на който се показва текста на песента заедно с музиката.";
+  "Забавление, при което ентусиасти пеят под акомпанимента на известни песни. Обикновено има сцена с микрофон и екран, на който се показва текста на песента заедно с музиката.";
 const ALPHA = "АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЬЮЯ".split("");
 
 export function RiddleView({ theme, onBack, onSolved }) {
@@ -87,7 +87,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
             style={{
               fontFamily: "var(--serif-text)",
               fontStyle: "italic",
-              fontSize: 13.5,
+              fontSize: 20,
               lineHeight: 1.72,
               color: theme.fg,
               opacity: 0.7,
@@ -194,7 +194,7 @@ export function RiddleView({ theme, onBack, onSolved }) {
               color: theme.accent,
             }}
           >
-            БРАВО ✦ Финалът е открит
+            Браво!✦ финалът е отключен
           </div>
         )}
 
@@ -236,7 +236,9 @@ export function RiddleView({ theme, onBack, onSolved }) {
                       height: 40,
                       borderRadius: 3,
                       border: `1px solid ${isCorrect ? theme.accent : theme.hair}`,
-                      background: isCorrect ? `${theme.accent}1c` : "transparent",
+                      background: isCorrect
+                        ? `${theme.accent}1c`
+                        : "transparent",
                       color: isWrong ? `${theme.muted}55` : theme.fg,
                       fontFamily: "var(--mono)",
                       fontSize: 14,
@@ -245,7 +247,9 @@ export function RiddleView({ theme, onBack, onSolved }) {
                       textDecoration: isWrong ? "line-through" : "none",
                       outline: "none",
                       WebkitTapHighlightColor: "transparent",
-                      boxShadow: isCorrect ? `0 0 8px ${theme.accent}44` : "none",
+                      boxShadow: isCorrect
+                        ? `0 0 8px ${theme.accent}44`
+                        : "none",
                       transition: "opacity 0.18s, border-color 0.18s",
                       transform: wiggle === letter ? "scale(0.88)" : "scale(1)",
                     }}
